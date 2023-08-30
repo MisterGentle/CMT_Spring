@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h2>Search Trend Results</h2>
+    <ul>
+        <li th:each="result : ${searchResponse.results}">
+            <h3 th:text="${result.title}"></h3>
+            <ul>
+                <li th:each="data : ${result.data}">
+                    <p th:text="${data.period}"></p>
+                    <p th:text="${data.ratio}"></p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
